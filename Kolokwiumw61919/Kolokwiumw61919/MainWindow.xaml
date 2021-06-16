@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kolokwiumw61919"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850">
+        Title="MainWindow" Height="500" Width="870">
     <Grid>
         <Button x:Name="BtnNettoNaBrutto" Content="Wylicz" HorizontalAlignment="Left" Margin="188,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
         <Button x:Name="BtnBruttoNaNetto" Content="Wylicz" HorizontalAlignment="Left" Margin="574,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
@@ -84,5 +84,9 @@
             <ComboBoxItem Content="1%"/>
             <ComboBoxItem Content="0%"/>
         </ComboBox>
+        <GroupBox Header="Netto na brutto" Margin="86,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="326"/>
+        <GroupBox Header="Brutto na netto" Margin="474,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="340"/>
+        <GroupBox Header="Netto na kwotę końcową" Margin="86,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="326"/>
+        <GroupBox Header="Kwota po odsetkach" Margin="449,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="398"/>
     </Grid>
 </Window>
