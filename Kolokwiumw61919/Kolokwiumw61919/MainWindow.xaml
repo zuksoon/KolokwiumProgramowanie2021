@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="870">
     <Grid>
-        <Button x:Name="BtnNettoNaBrutto" Content="Wylicz" HorizontalAlignment="Left" Margin="188,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
-        <Button x:Name="BtnBruttoNaNetto" Content="Wylicz" HorizontalAlignment="Left" Margin="574,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
+        <Button x:Name="BtnNettoNaBrutto" Content="Wylicz" HorizontalAlignment="Left" Margin="188,148,0,0" VerticalAlignment="Top" Height="42" Width="80" Click="BtnNettoNaBrutto_Click"/>
+        <Button x:Name="BtnBruttoNaNetto" Content="Wylicz" HorizontalAlignment="Left" Margin="574,148,0,0" VerticalAlignment="Top" Height="42" Width="80" Click="BtnBruttoNaNetto_Click"/>
         <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="86,86,0,0" VerticalAlignment="Top"/>
         <Label Content="Kwota brutto:" HorizontalAlignment="Left" Margin="86,117,0,0" VerticalAlignment="Top"/>
         <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="482,121,0,0" VerticalAlignment="Top"/>
         <Label Content="Kwota brutto:" HorizontalAlignment="Left" Margin="482,90,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="168,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="172,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
+        <TextBox x:Name="TextBoxNetto1" HorizontalAlignment="Left" Margin="168,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <TextBox x:Name="TextBoxBrutto1" HorizontalAlignment="Left" Margin="172,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
         <Label Content="Vat:" HorizontalAlignment="Left" Margin="293,86,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="ComboBoxNettoNaBrutto" HorizontalAlignment="Left" Margin="327,89,0,0" VerticalAlignment="Top" Width="73">
             <ComboBoxItem Content="23%"/>
@@ -23,8 +23,8 @@
             <ComboBoxItem Content="5%"/>
             <ComboBoxItem Content="0%"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Margin="560,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="564,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
+        <TextBox x:Name="TextBoxBrutto2" HorizontalAlignment="Left" Margin="560,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <TextBox x:Name="TextBoxNetto2" HorizontalAlignment="Left" Margin="564,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
         <Label Content="Vat:" HorizontalAlignment="Left" Margin="685,89,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="ComboBoxBruttoNaNetto" HorizontalAlignment="Left" Margin="719,93,0,0" VerticalAlignment="Top" Width="73">
             <ComboBoxItem Content="23%"/>
@@ -84,9 +84,45 @@
             <ComboBoxItem Content="1%"/>
             <ComboBoxItem Content="0%"/>
         </ComboBox>
-        <GroupBox Header="Netto na brutto" Margin="86,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="326"/>
-        <GroupBox Header="Brutto na netto" Margin="474,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="340"/>
-        <GroupBox Header="Netto na kwotę końcową" Margin="86,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="326"/>
-        <GroupBox Header="Kwota po odsetkach" Margin="449,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="398"/>
+        <GroupBox Header="Netto na brutto" Margin="86,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="328" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
+        <GroupBox Header="Brutto na netto" Margin="474,42,0,242" IsEnabled="False" HorizontalAlignment="Left" Width="333" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
+        <GroupBox Header="Netto na kwotę końcową" Margin="86,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="316" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
+        <GroupBox Header="Kwota po odsetkach" Margin="449,258,0,25" IsEnabled="False" HorizontalAlignment="Left" Width="398" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
     </Grid>
 </Window>
