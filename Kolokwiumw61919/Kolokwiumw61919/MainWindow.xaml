@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="850">
     <Grid>
-        <Button Content="Wylicz" HorizontalAlignment="Left" Margin="188,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
-        <Button Content="Wylicz" HorizontalAlignment="Left" Margin="574,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
+        <Button x:Name="BtnNettoNaBrutto" Content="Wylicz" HorizontalAlignment="Left" Margin="188,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
+        <Button x:Name="BtnBruttoNaNetto" Content="Wylicz" HorizontalAlignment="Left" Margin="574,148,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
         <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="86,86,0,0" VerticalAlignment="Top"/>
         <Label Content="Kwota brutto:" HorizontalAlignment="Left" Margin="86,117,0,0" VerticalAlignment="Top"/>
         <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="482,121,0,0" VerticalAlignment="Top"/>
@@ -16,7 +16,7 @@
         <TextBox HorizontalAlignment="Left" Margin="168,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="172,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
         <Label Content="Vat:" HorizontalAlignment="Left" Margin="293,86,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="327,89,0,0" VerticalAlignment="Top" Width="73">
+        <ComboBox x:Name="ComboBoxNettoNaBrutto" HorizontalAlignment="Left" Margin="327,89,0,0" VerticalAlignment="Top" Width="73">
             <ComboBoxItem Content="23%"/>
             <ComboBoxItem Content="8%"/>
             <ComboBoxItem Content="7%"/>
@@ -26,7 +26,7 @@
         <TextBox HorizontalAlignment="Left" Margin="560,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="564,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="14"/>
         <Label Content="Vat:" HorizontalAlignment="Left" Margin="685,89,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="719,93,0,0" VerticalAlignment="Top" Width="73">
+        <ComboBox x:Name="ComboBoxBruttoNaNetto" HorizontalAlignment="Left" Margin="719,93,0,0" VerticalAlignment="Top" Width="73">
             <ComboBoxItem Content="23%"/>
             <ComboBoxItem Content="8%"/>
             <ComboBoxItem Content="7%"/>
@@ -34,13 +34,54 @@
             <ComboBoxItem Content="0%"/>
         </ComboBox>
         <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="124,283,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="206,286,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Margin="206,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
         <Label Content="Vat:" HorizontalAlignment="Left" Margin="91,314,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="128,318,0,0" VerticalAlignment="Top" Width="73">
+        <ComboBox x:Name="ComboBoxVatNettoNaKwoteKonc" HorizontalAlignment="Left" Margin="128,318,0,0" VerticalAlignment="Top" Width="73">
             <ComboBoxItem Content="23%"/>
             <ComboBoxItem Content="8%"/>
             <ComboBoxItem Content="7%"/>
             <ComboBoxItem Content="5%"/>
+            <ComboBoxItem Content="0%"/>
+        </ComboBox>
+        <Label Content="Kwota netto:" HorizontalAlignment="Left" Margin="516,283,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="598,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Label Content="Vat:" HorizontalAlignment="Left" Margin="449,314,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxVatKwotaKoncowa" HorizontalAlignment="Left" Margin="486,318,0,0" VerticalAlignment="Top" Width="73">
+            <ComboBoxItem Content="23%"/>
+            <ComboBoxItem Content="8%"/>
+            <ComboBoxItem Content="7%"/>
+            <ComboBoxItem Content="5%"/>
+            <ComboBoxItem Content="0%"/>
+        </ComboBox>
+        <Label Content="Marża:" HorizontalAlignment="Left" Margin="213,314,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kwota końcowa:" HorizontalAlignment="Left" Margin="124,359,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="224,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <ComboBox x:Name="ComboBoxMarzaNettoNaKwoteKonc_Copy" HorizontalAlignment="Left" Margin="263,318,0,0" VerticalAlignment="Top" Width="73">
+            <ComboBoxItem Content="20%"/>
+            <ComboBoxItem Content="15%"/>
+            <ComboBoxItem Content="10%"/>
+            <ComboBoxItem Content="7%"/>
+            <ComboBoxItem Content="5%"/>
+        </ComboBox>
+        <Label Content="Marża:" HorizontalAlignment="Left" Margin="574,314,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnNettoNaKoncowa" Content="Wylicz" HorizontalAlignment="Left" Margin="196,390,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
+        <Button x:Name="BtnKwotaPoOdsetkach" Content="Wylicz" HorizontalAlignment="Left" Margin="578,390,0,0" VerticalAlignment="Top" Height="42" Width="80"/>
+        <Label Content="Kwota końcowa po odetkach:" HorizontalAlignment="Left" Margin="449,356,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="620,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <ComboBox x:Name="ComboBoxMarzaNettoNaKwoteKonc_Copy1" HorizontalAlignment="Left" Margin="620,318,0,0" VerticalAlignment="Top" Width="73">
+            <ComboBoxItem Content="20%"/>
+            <ComboBoxItem Content="15%"/>
+            <ComboBoxItem Content="10%"/>
+            <ComboBoxItem Content="7%"/>
+            <ComboBoxItem Content="5%"/>
+        </ComboBox>
+        <Label Content="Odsetki:" HorizontalAlignment="Left" Margin="705,314,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxMarzaNettoNaKwoteKonc_Copy2" HorizontalAlignment="Left" Margin="763,318,0,0" VerticalAlignment="Top" Width="73">
+            <ComboBoxItem Content="5%"/>
+            <ComboBoxItem Content="4%"/>
+            <ComboBoxItem Content="3%"/>
+            <ComboBoxItem Content="2%"/>
+            <ComboBoxItem Content="1%"/>
             <ComboBoxItem Content="0%"/>
         </ComboBox>
     </Grid>
